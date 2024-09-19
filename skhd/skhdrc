@@ -1,0 +1,40 @@
+# move
+# alt - h : yabai -m window --focus west
+# alt - l : yabai -m window --focus east
+# alt - k : yabai -m window --focus north
+# alt - j : yabai -m window --focus south
+alt - h : yabai -m window --focus west  || $(yabai -m display --focus west)
+alt - j : yabai -m window --focus south || $(yabai -m display --focus south)
+alt - k : yabai -m window --focus north || $(yabai -m display --focus north)
+alt - l : yabai -m window --focus east  || $(yabai -m display --focus east)
+
+# swap
+shift + alt - h : yabai -m window --swap west  || $(yabai -m window --display west; yabai -m display --focus west)
+shift + alt - l : yabai -m window --swap east  || $(yabai -m window --display east; yabai -m display --focus east)
+shift + alt - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+shift + alt - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+
+# move to next/prev window
+shift + cmd - right : yabai -m window --display next; yabai -m display --focus next
+shift + cmd - left : yabai -m window --display prev; yabai -m display --focus prev
+
+# fullscreen
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
+
+# space change
+cmd - 1 : yabai -m space --focus 1
+cmd - 2 : yabai -m space --focus 2
+cmd - 3 : yabai -m space --focus 3
+cmd - 4 : yabai -m space --focus 4
+cmd - 5 : yabai -m space --focus 5
+# alt + shift - h : yabai -m space --focus prev
+# alt + shift - l : yabai -m space --focus next
+
+# space move
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - h : yabai -m window --space prev
+alt + shift - l : yabai -m window --space next

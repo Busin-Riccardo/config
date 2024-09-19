@@ -1,0 +1,27 @@
+.DS_Store
+NuGet
+configstore
+gcloud
+gh
+github-copilot
+gtk-2.0
+iterm2
+jgit
+kitty
+# nvim
+nvim.bak.latest
+nvim.bkp.1
+nvim.bkp.2
+nvim.lazy.bkp
+phpactor
+# ranger
+# skhd
+# tmux
+tmuxinator
+tracy
+# wezterm
+xbuild
+yabai
+yarn
+zed
+nvimdotgit
