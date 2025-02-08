@@ -44,7 +44,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font("Fira Code", { weight = "Medium" })
 config.line_height = 1.15
 -- wezterm.font('JetBrains Mono' )
-config.font_size = 13.0
+config.font_size = 14.0
 
 -- config.background = {
 --     {

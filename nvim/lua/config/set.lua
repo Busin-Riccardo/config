@@ -46,3 +46,8 @@ vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
 
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.filetype.add({
+	extension = {
+		re = "reason",
+	},
+})

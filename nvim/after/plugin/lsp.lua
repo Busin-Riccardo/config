@@ -121,20 +121,20 @@ require("mason-lspconfig").setup({
 			end
 			require("lspconfig").cssmodules_ls.setup({})
 		end,
-		ocamllsp = function()
-			require("lspconfig").ocamllsp.setup({
-				cmd = { "ocamllsp" },
-				filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-				root_dir = lsp.util.root_pattern(
-					"*.opam",
-					"esy.json",
-					"package.json",
-					".git",
-					"dune-project",
-					"dune-workspace"
-				),
-			})
-		end,
+		-- ocamllsp = function()
+		-- 	require("lspconfig").ocamllsp.setup({
+		-- 		cmd = { "ocamllsp" },
+		-- 		filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+		-- 		root_dir = lsp.util.root_pattern(
+		-- 			"*.opam",
+		-- 			"esy.json",
+		-- 			"package.json",
+		-- 			".git",
+		-- 			"dune-project",
+		-- 			"dune-workspace"
+		-- 		),
+		-- 	})
+		-- end,
 		graphql = function()
 			if require("neoconf").get("lsp.graphql.disable") then
 				return
@@ -345,6 +345,12 @@ end)
 
 lsp.html.setup({
 	filetypes = { "html", "template" },
+})
+
+lsp.ocamllsp.setup({
+	cmd = { "ocamllsp" },
+	filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+	root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
 })
 
 lsp.gopls.setup({
