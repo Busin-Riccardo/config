@@ -1,6 +1,9 @@
 return {
 	{
 		"tjdevries/ocaml.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 		build = "make",
 		config = function()
 			require("ocaml").setup({

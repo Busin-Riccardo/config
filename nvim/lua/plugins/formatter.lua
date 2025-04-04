@@ -15,11 +15,22 @@ return {
 				yaml = {},
 				yml = {},
 				template = { "prettierd", "prettier" },
+				reason = { "refmt" },
+				["ocaml.mlx"] = { "ocamlformatmlx" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
 				timeout_ms = 500,
 				lsp_format = "fallback",
+			},
+			formatters = {
+				refmt = {
+					command = "refmt",
+				},
+				ocamlformatmlx = {
+					command = "ocamlformat-mlx",
+					args = { "--enable-outside-detected-project", "--name", "$FILENAME", "-" },
+				},
 			},
 		})
 	end,

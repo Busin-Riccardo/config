@@ -257,15 +257,15 @@ return {
 		end
 
 		local opts = { noremap = true, silent = true }
-		vim.keymap.set(
-			"n",
-			"f",
-			jump({
-				search = { forward = true, wrap = false, multi_window = false },
-				modes = { char = { jump_labels = true } },
-			}),
-			opts
-		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"f",
+		-- 	jump({
+		-- 		search = { forward = true, wrap = false, multi_window = false },
+		-- 		modes = { char = { jump_labels = true } },
+		-- 	}),
+		-- 	opts
+		-- )
 		vim.keymap.set(
 			"n",
 			"F",

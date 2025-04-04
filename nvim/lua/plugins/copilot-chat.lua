@@ -1,7 +1,6 @@
 return {
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
 		dependencies = {
 			{ "github/copilot.vim" },
 			{ "nvim-lua/plenary.nvim" },
@@ -9,7 +8,7 @@ return {
 		build = "make tiktoken",
 		config = function()
 			require("CopilotChat").setup({
-				debug = true,
+				model = "claude-3.7-sonnet",
 			})
 
 			-- Keybindings for CopilotChat commands with descriptions for which-key

@@ -85,7 +85,19 @@ return {
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	"ellisonleao/gruvbox.nvim",
+	{
+		"ellisonleao/gruvbox.nvim",
+		config = function()
+			local g = require("gruvbox")
+
+			g.setup({
+				overrides = {
+					["@tag.delimeter"] = { fg = "#ff0000" },
+				},
+			})
+			vim.cmd.colorscheme("gruvbox")
+		end,
+	},
 	"folke/trouble.nvim",
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
@@ -121,4 +133,10 @@ return {
 	},
 	{ "folke/neoconf.nvim" },
 	{ "nanotee/sqls.nvim" },
+	{
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup({})
+		end,
+	},
 }
