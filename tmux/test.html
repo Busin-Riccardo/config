@@ -1,0 +1,93 @@
+<div id="popupContainer" class="popup hidden">
+  <div class="popup-content">
+    <button id="closePopup" class="close-btn">&times;</button>
+    <h2>Prenotazione</h2>
+    <form>
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" required /><br /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+</div>
+<!-- STILI -->
+<style>
+  .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .popup.hidden {
+    display: none;
+  }
+  .popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  form input,
+  form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  form button {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+</style>
+<!-- SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openBtn = document.querySelector('[href="#popupopen"]');
+    const closeBtn = document.getElementById("closePopup");
+    const popup = document.getElementById("popupContainer");
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.remove("hidden");
+    });
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+    window.addEventListener("click", function (e) {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
